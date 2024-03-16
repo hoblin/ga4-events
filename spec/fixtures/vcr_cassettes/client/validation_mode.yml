@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.google-analytics.com/debug/mp/collect?api_secret=test_secret&measurement_id=G-TEST123
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"generated-client-id","events":[{"name":"test_event","params":{}}]}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Wed, 26 Nov 2025 22:10:09 GMT
+      Server:
+      - MPVS
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "validationMessages": [ ]
+        }
+  recorded_at: Wed, 26 Nov 2025 22:10:09 GMT
+recorded_with: VCR 6.3.1

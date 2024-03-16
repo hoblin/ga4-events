@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.google-analytics.com/mp/collect?api_secret=test_secret&measurement_id=G-TEST123
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"generated-client-id","events":[{"name":"test_event","params":{}}]}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Date:
+      - Wed, 26 Nov 2025 22:10:09 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Last-Modified:
+      - Sun, 17 May 1998 03:00:00 GMT
+      Content-Type:
+      - text/plain
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/ascnsrsggc:66:0
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to=ascnsrsggc:66:0
+      Report-To:
+      - '{"group":"ascnsrsggc:66:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/ascnsrsggc:66:0"}],}'
+      Server:
+      - Golfe2
+      Content-Length:
+      - '0'
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 26 Nov 2025 22:10:09 GMT
+recorded_with: VCR 6.3.1

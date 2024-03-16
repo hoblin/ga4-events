@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
-require "ga4/events/sender"
+require "simplecov"
+require "vcr"
+
+SimpleCov.start do
+  add_filter "/spec/"
+  minimum_coverage 99
+end
+
+require "ga4/events"
+
+Dir[File.join(__dir__, "support/**/*.rb")].sort.each { |file| require file }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
