@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ga4-events (1.0.0)
+    ga4-events (1.0.1)
       json (= 2.7.6)
       logger (~> 1.7)
 
