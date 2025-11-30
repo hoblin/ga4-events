@@ -4,5 +4,3 @@ source "https://rubygems.org"
 
 # Specify your gem's dependencies in ga4-events.gemspec
 gemspec
-
-gem "logger", "~> 1.7"

@@ -35,7 +35,7 @@ RSpec.describe GA4::Events::Client do
 
   describe "#send_event", vcr: { cassette_name: "client/send_event" } do
     it "sends a single event successfully" do
-      response = client.send_event("test_event", { key: "value" })
+      response = client.send_event("test_event", { "key" => "value" })
 
       expect(response).to be_a(GA4::Events::Response)
       expect(response.success?).to be true
@@ -108,7 +108,7 @@ RSpec.describe GA4::Events::Client do
       let(:body) { "invalid json" }
 
       it "returns empty hash" do
-        expect(parse_response_body).to eq({raw: "invalid json"})
+        expect(parse_response_body).to eq({ raw: "invalid json" })
       end
     end
   end
@@ -317,7 +317,7 @@ RSpec.describe GA4::Events::Client do
 
   describe "debug mode", vcr: { cassette_name: "client/debug_mode" } do
     context "when debug_mode is false" do
-      let(:response) { client.send_event("test_event", { key: "value" }) }
+      let(:response) { client.send_event("test_event", { "key" => "value" }) }
 
       before do
         config.debug_mode = false
@@ -329,7 +329,7 @@ RSpec.describe GA4::Events::Client do
     end
 
     context "when debug_mode is true" do
-      let(:response) { client.send_event("test_event", { key: "value" }) }
+      let(:response) { client.send_event("test_event", { "key" => "value" }) }
 
       before do
         config.debug_mode = true

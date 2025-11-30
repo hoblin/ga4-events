@@ -101,6 +101,7 @@ RSpec.describe GA4::Events::Response do
 
   describe "#to_h" do
     subject(:response) { described_class.new(200, { data: "value" }, ["error"]) }
+
     let(:response_hash) { response.to_h }
 
     it "returns a hash representation with correct values" do

@@ -69,7 +69,7 @@ class GA4::Events::Client
         log_response(response, payload)
 
         return response
-      rescue StandardError => e
+      rescue => e
         last_error = e
 
         log_error("Attempt #{attempts} failed: #{e.message}")
@@ -93,10 +93,10 @@ class GA4::Events::Client
     http_response = http.request(request)
 
     body = parse_response_body(http_response.body)
-    errors = http_response.code.to_i >= 400 ? [http_response.message] : []
+    errors = (http_response.code.to_i >= 400) ? [http_response.message] : []
 
     GA4::Events::Response.new(http_response.code.to_i, body, errors)
-  rescue StandardError => e
+  rescue => e
     raise e unless config.fail_silently
 
     GA4::Events::Response.new(0, {}, [e.message])

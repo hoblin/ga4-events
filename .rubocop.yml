@@ -1,0 +1,44 @@
+# We want Exclude directives from different
+# config files to get merged, not overwritten
+inherit_mode:
+  merge:
+    - Exclude
+
+require:
+  # Standard's config uses custom cops,
+  # so it must be loaded along with custom Standard gems
+  - standard
+  - standard-custom
+  - standard-performance
+  # rubocop-performance is required when using Performance cops
+  - rubocop-performance
+  - rubocop-rake
+
+inherit_gem:
+  standard: config/base.yml
+  # You can also choose a Ruby-version-specific config
+  # standard: config/ruby-3.0.yml
+  # Standard plugins must be loaded separately (since v1.28.0)
+  standard-performance: config/base.yml
+  standard-custom: config/base.yml
+
+inherit_from:
+  - .rubocop/rspec.yml
+
+AllCops:
+  TargetRubyVersion: 3.3
+
+Style/StringLiterals:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
+
+Layout/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: true
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_first_argument

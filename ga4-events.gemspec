@@ -36,13 +36,23 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "logger", "~> 1.7"
+  spec.add_dependency "json", "2.7.6"
+
   # Development dependencies
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "standard", "~> 1.3"
+  spec.add_development_dependency "standard", "1.34"
   spec.add_development_dependency "vcr", "~> 6.0"
   spec.add_development_dependency "webmock", "~> 3.0"
   spec.add_development_dependency "pry"
-  spec.add_development_dependency "irb"
+  spec.add_development_dependency "irb", "1.6.3"
+  spec.add_development_dependency "rdoc"
+  spec.add_development_dependency "erb", "2.2.3"
   spec.add_development_dependency "simplecov"
+  spec.add_development_dependency "rubocop", "1.61"
+  spec.add_development_dependency "rubocop-rspec"
+  spec.add_development_dependency "rubocop-performance"
+  spec.add_development_dependency "rubocop-rake"
+  spec.add_development_dependency "rubocop-ast", "1.30.0"
 end

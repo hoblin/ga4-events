@@ -187,6 +187,7 @@ RSpec.describe GA4::Events::Event do
 
   describe "#to_h" do
     subject(:event) { described_class.new("test_event", event_params) }
+
     let(:event_params) { { key: "value" } }
 
     context "without debug_mode" do
