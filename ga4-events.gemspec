@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "logger", "~> 1.7"
-  spec.add_dependency "json", "2.7.6"
+  spec.add_dependency "json", "~> 2.7"
 
   # Development dependencies
   spec.add_development_dependency "rake", "~> 13.0"
